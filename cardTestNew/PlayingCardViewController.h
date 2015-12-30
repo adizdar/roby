@@ -11,5 +11,4 @@
 ///////////////////////////////////////////
 
 @interface PlayingCardViewController : AbstractCardGameViewContoller
-
 @end

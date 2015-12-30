@@ -8,10 +8,10 @@
 
 //////////////////////////////////////////
 #import "AbstractCardGameViewContoller.h"
+#import "AppDelegate.h"
 /////////////////////////////////////////
 
 @interface AbstractCardGameViewContoller ()
-
 @end
 
 @implementation AbstractCardGameViewContoller
@@ -39,7 +39,7 @@
     return _game;
 }
 
-- (NSUInteger) gameType
+- (NSUInteger) gameType 
 {
     return !_gameType ? 2 :_gameType;
 }
@@ -50,16 +50,32 @@
                                              usingDeck: [self createDeck] matchNumber: self.gameType];
 }
 
+//- (NSString *) playedMovesHistory
+//{
+//    if (!_playedMovesHistory) {
+//        _playedMovesHistory = @"";
+//    }
+//    
+//    return _playedMovesHistory;
+//}
+
 /**
   * Methods
   */
 
 - (IBAction)cardTouchButton:(UIButton *)sender {
-    
     NSUInteger choosenButtonIndex = [self.cardButtonCollection indexOfObject:sender];
+    
     [self.game chooseCardAtIndex: choosenButtonIndex];
+    [self updateMoveHistory: [self.game cardAtIndex: choosenButtonIndex]];
     [self updateUi];
     
+}
+
+- (IBAction)resetCardGame:(id)sender {
+    self.game = [self createCardMatchingGame];
+    self.playedMovesHistory = nil;
+    [self updateUi];
 }
 
 - (void)updateUi
@@ -77,7 +93,7 @@
         cardButton.enabled = !card.isMatched;
     }
     
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu", (unsigned long)self.game.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
 }
 
 - (NSString *)titleForCard:(Card *)card
@@ -88,6 +104,52 @@
 - (UIImage *)imageForCard:(Card *)card
 {
     return [UIImage imageNamed: card.isChosen ? @"cardMain" : @"cardTop"];
+}
+
+/** 
+  * This class can be Overided or used like this
+ */
+- (void) updateMoveHistory: (Card *) card
+{
+    self.playedMovesHistory = [self.playedMovesHistory stringByAppendingString: [self createMoveHistory:card]];
+}
+
+- (NSString *) createMoveHistory: (Card *)card
+{
+    // to be sure that history of moves is always string
+    NSString* tempMoves = ![self.playedMovesHistory isKindOfClass:[NSString class]] ? [self.playedMovesHistory string] : self.playedMovesHistory;
+    NSInteger moveCounter = [[tempMoves componentsSeparatedByCharactersInSet:
+                              [NSCharacterSet newlineCharacterSet]] count];
+    NSInteger chosenCardsCounter = [self.game getChosenCardsCounter];
+    
+    // add the move counter if the chosen card is one
+    NSString* history = (chosenCardsCounter == 1) ? [NSString stringWithFormat:@"%ld%s", moveCounter, "."] : @"";
+    
+    // if the card is matched don't add the card for the next move
+    if (card.isMatched) {
+        history = [NSString stringWithFormat: @"%@ %s\n", [self titleForCard:card], "MATCHED"];
+    } else {
+        // if moves are equal to game type add next card to next move
+        // if the moves are equal to game type add counter+1 for the next move
+        history = [history stringByAppendingString: (chosenCardsCounter != self.gameType) ?
+        [NSString stringWithFormat:@" %@", [self titleForCard:card]] :
+        [NSString stringWithFormat:@" %@ \n %ld%s %@", [self titleForCard:card], moveCounter + 1, ".", [self titleForCard:card]]];
+    }
+    
+    return history;
+}
+
+#pragma mark - View events
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    UIAppDelegate.historyData = self.playedMovesHistory;
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 //Card *randomCard = [self.pcDeck drawRandomCard];

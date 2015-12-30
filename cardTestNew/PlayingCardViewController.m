@@ -9,6 +9,7 @@
 ///////////////////////////////////////
 #import "PlayingCardViewController.h"
 #import "PlayingCardDeck.h"
+#import "HistoryViewController.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -33,12 +34,24 @@ alpha:1.0]
     return [[PlayingCardDeck alloc] init];
 }
 
+- (NSString *) playedMovesHistory
+{
+    if (![super playedMovesHistory]) {
+        [super setPlayedMovesHistory: @""];
+    }
+    
+    return [super playedMovesHistory];
+}
+
 - (void)updateUi
 {
+    NSUInteger cardButtonIndex;
+    Card *card;
+    
     for (UIButton *cardButton in self.cardButtonCollection) {
-        NSUInteger cardButtonIndex = [self.cardButtonCollection indexOfObject:cardButton];
-        Card *card = [self.game cardAtIndex:cardButtonIndex];
-        
+        cardButtonIndex = [self.cardButtonCollection indexOfObject:cardButton];
+        card = [self.game cardAtIndex:cardButtonIndex];
+
         [cardButton setTitle:[self titleForCard:card]
                     forState:UIControlStateNormal];
         
@@ -47,10 +60,9 @@ alpha:1.0]
         
         cardButton.enabled = !card.isMatched;
     }
-    
-    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Score: %d", self.game.score];;
-}
 
+    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
+}
 
 /**
   * View specific events
@@ -62,24 +74,22 @@ alpha:1.0]
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    // Do any additional setup after loading the view.
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+////    UIAppDelegate.historyData = self.playedMovesHistory;
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

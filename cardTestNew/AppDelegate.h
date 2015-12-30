@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define UIAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) id historyData;
 
 @end
 

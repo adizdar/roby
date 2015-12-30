@@ -27,8 +27,13 @@
     - (void)updateUi;
     - (NSString *)titleForCard:(Card *)card;
     - (UIImage *)imageForCard:(Card *)card;
+    - (NSString *) createMoveHistory: (Card *)card;
 
-    /// ! -- Abstract/Protected
+
+    /// ! -- Abstract/Protected/Override
+    @property(nonatomic, strong) id playedMovesHistory; // because it can be NSString or NSAttributedString ...
     - (Deck*) createDeck;
+    - (void) updateMoveHistory: (Card *) card;
+
 
 @end

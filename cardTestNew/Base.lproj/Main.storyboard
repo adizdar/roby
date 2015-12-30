@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Dqb-Ft-vN8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Dqb-Ft-vN8">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Score: 0-->
@@ -21,34 +21,6 @@
                                 <rect key="frame" x="76" y="57" width="167" height="167"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLJ-mS-lgp">
-                                <rect key="frame" x="56" y="231" width="208" height="92"/>
-                                <animations/>
-                                <string key="text">Loby card game, 
-simple set card game ...</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.16862745098039217" green="0.51764705882352946" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3k-Ak-aZs" customClass="CardGameType">
-                                <rect key="frame" x="83" y="329" width="71" height="93"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" backgroundImage="cardMatchTwoBlue">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="gameType">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChosen" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateChosen" value="cardMatchTwoBlue"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateNotChosen" value="lobycardback"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="changeGameType:" destination="UtG-gu-fan" eventType="touchUpInside" id="yB5-zF-NWE"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe to play &gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a7-zv-9R1">
                                 <rect key="frame" x="110" y="458" width="113" height="21"/>
                                 <animations/>
@@ -56,25 +28,15 @@ simple set card game ...</string>
                                 <color key="textColor" red="0.16862745098039217" green="0.51764705882352946" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-y9-aMQ" customClass="CardGameType">
-                                <rect key="frame" x="170" y="329" width="71" height="93"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLJ-mS-lgp">
+                                <rect key="frame" x="55" y="246" width="209" height="92"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" backgroundImage="lobycardback">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="gameType">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChosen" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateChosen" value="cardMatchThreeBlue"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="stateNotChosen" value="lobycardback"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="changeGameType:" destination="UtG-gu-fan" eventType="touchUpInside" id="WAb-cF-UPX"/>
-                                </connections>
-                            </button>
+                                <string key="text">Loby card game, 
+simple set matching card game ...</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.16862745098039217" green="0.51764705882352946" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,15 +48,11 @@ simple set card game ...</string>
                     <navigationItem key="navigationItem" title="Score: 0" id="Zvs-9A-ujf"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outletCollection property="gameTypeButtonCollection" destination="L3k-Ak-aZs" id="Zgx-gZ-BIR"/>
-                        <outletCollection property="gameTypeButtonCollection" destination="CBd-y9-aMQ" id="fWQ-YK-3hh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvP-YX-WFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="ek1-2X-rAa">
                     <connections>
-                        <segue destination="mwb-TN-JRI" kind="push" id="93x-6M-TCw"/>
+                        <segue destination="mwb-TN-JRI" kind="push" identifier="LobyCardGame" id="93x-6M-TCw"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -112,304 +70,315 @@ simple set card game ...</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKH-mT-Owv">
-                                <rect key="frame" x="17" y="88" width="50" height="66"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQR-y5-Jvu"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDk-71-WG4">
-                                <rect key="frame" x="76" y="88" width="50" height="66"/>
+                                <rect key="frame" x="74" y="88" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ohL-xE-hFr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-nt-7Kn">
-                                <rect key="frame" x="138" y="88" width="50" height="66"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIQ-Pi-XJ1"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="WC2-6p-Rke"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFj-gb-QBx">
-                                <rect key="frame" x="199" y="88" width="50" height="66"/>
+                                <rect key="frame" x="197" y="88" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="osM-Bj-Jge"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-jH-o0l">
-                                <rect key="frame" x="257" y="88" width="50" height="66"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qfu-yA-KKA"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="vuZ-bc-bRz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNr-7l-kl0">
-                                <rect key="frame" x="17" y="173" width="50" height="66"/>
+                                <rect key="frame" x="15" y="173" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tMw-WC-qSX"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="VX5-NP-1Bl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwW-ys-IYt">
+                                <rect key="frame" x="15" y="88" width="50" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="kTv-3O-1Qo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3m-6Q-bQh">
-                                <rect key="frame" x="76" y="173" width="50" height="66"/>
+                                <rect key="frame" x="74" y="173" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gE-5T-O34"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="KaF-QN-pk3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-cj-iDi">
-                                <rect key="frame" x="138" y="173" width="50" height="66"/>
+                                <rect key="frame" x="136" y="173" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yyh-HX-QJy"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Ucc-ck-n1e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nt-4a-Ktk">
-                                <rect key="frame" x="199" y="173" width="50" height="66"/>
+                                <rect key="frame" x="197" y="173" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="88r-9G-ZXd"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="q9D-CE-8vc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pX3-OD-J8K">
-                                <rect key="frame" x="257" y="173" width="50" height="66"/>
+                                <rect key="frame" x="255" y="173" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QUL-CP-xRV"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="ln5-pd-qNG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0o-Dl-7B8">
+                                <rect key="frame" x="255" y="88" width="50" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="yb0-ir-6Iy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f05-Br-P3o">
-                                <rect key="frame" x="17" y="254" width="50" height="66"/>
+                                <rect key="frame" x="15" y="254" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OiR-Va-3wT"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="OGR-ad-uWx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5Y-y2-y1M">
-                                <rect key="frame" x="76" y="254" width="50" height="66"/>
+                                <rect key="frame" x="74" y="254" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4tR-gF-PJJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-ml-SFn">
-                                <rect key="frame" x="138" y="254" width="50" height="66"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iRb-Qc-70l"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Qte-NB-4SE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYj-qL-qyV">
-                                <rect key="frame" x="199" y="254" width="50" height="66"/>
+                                <rect key="frame" x="197" y="254" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ftq-kP-Ago"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Gi0-oW-jgi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdv-4j-sCE">
-                                <rect key="frame" x="257" y="254" width="50" height="66"/>
+                                <rect key="frame" x="255" y="254" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r79-61-odo"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Dhf-7A-GfM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3t-cO-xOx">
-                                <rect key="frame" x="17" y="338" width="50" height="66"/>
+                                <rect key="frame" x="15" y="335" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAH-Mi-82L"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Lqd-oV-3cw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDF-LP-WJu">
-                                <rect key="frame" x="76" y="338" width="50" height="66"/>
+                                <rect key="frame" x="74" y="335" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vgq-cM-sel"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="1so-8w-UBW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P44-2J-Pkz">
-                                <rect key="frame" x="138" y="338" width="50" height="66"/>
+                                <rect key="frame" x="136" y="335" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bh4-xg-U6l"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="IJb-up-ron"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7p-0E-VGF">
-                                <rect key="frame" x="199" y="338" width="50" height="66"/>
+                                <rect key="frame" x="197" y="335" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBa-AC-hUw"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="GHO-Th-cRT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBK-6v-q9e">
+                                <rect key="frame" x="135" y="88" width="50" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="CP8-Ty-Gos"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmZ-po-Fad">
+                                <rect key="frame" x="137" y="254" width="50" height="66"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="A8E-08-joy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-u6-c2u">
-                                <rect key="frame" x="257" y="338" width="50" height="66"/>
+                                <rect key="frame" x="255" y="335" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEV-y2-71g"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="bia-0O-7sS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yl-h3-wdz">
-                                <rect key="frame" x="17" y="422" width="50" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvR-5D-Ihd">
+                                <rect key="frame" x="15" y="412" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKJ-kg-bE6"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="qqT-Qm-722"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fB-j1-faj">
-                                <rect key="frame" x="76" y="422" width="50" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-j5-DbN">
+                                <rect key="frame" x="74" y="412" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msX-JM-6tp"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="X1K-Ue-heT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FK3-eH-iTy">
-                                <rect key="frame" x="138" y="422" width="50" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Iq-kp-q8J">
+                                <rect key="frame" x="136" y="412" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="amb-UY-aS8"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="BVy-rz-MDQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDU-sd-jX0">
-                                <rect key="frame" x="199" y="422" width="50" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnv-6D-p8s">
+                                <rect key="frame" x="197" y="412" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBX-o3-qE0"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="BJM-WD-cZx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pv-er-s9A">
-                                <rect key="frame" x="257" y="422" width="50" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLs-bo-xka">
+                                <rect key="frame" x="255" y="412" width="50" height="66"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="lobycardback">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="cardMain">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ohd-ga-VTt"/>
+                                    <action selector="cardTouchButton:" destination="mwb-TN-JRI" eventType="touchUpInside" id="HUw-SZ-QYy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iig-eh-m1Y">
+                                <rect key="frame" x="117" y="484" width="89" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Redeal cards">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetCardGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nid-qS-fcW"/>
+                                    <action selector="resetCardGame:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Njw-Tn-nls"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -419,6 +388,33 @@ simple set card game ...</string>
                     <navigationItem key="navigationItem" title="Score: 0" id="m5O-kr-ZpU"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="cardButtonCollection" destination="HDk-71-WG4" id="dDf-Oq-xN8"/>
+                        <outletCollection property="cardButtonCollection" destination="hFj-gb-QBx" id="54a-tm-ebh"/>
+                        <outletCollection property="cardButtonCollection" destination="BNr-7l-kl0" id="Dx0-9p-S6m"/>
+                        <outletCollection property="cardButtonCollection" destination="Z3m-6Q-bQh" id="zuh-vz-0FX"/>
+                        <outletCollection property="cardButtonCollection" destination="rNT-cj-iDi" id="wgb-qI-c1O"/>
+                        <outletCollection property="cardButtonCollection" destination="7Nt-4a-Ktk" id="0Tx-By-QyB"/>
+                        <outletCollection property="cardButtonCollection" destination="pX3-OD-J8K" id="A9Q-dZ-g39"/>
+                        <outletCollection property="cardButtonCollection" destination="f05-Br-P3o" id="RFr-i7-yuJ"/>
+                        <outletCollection property="cardButtonCollection" destination="J5Y-y2-y1M" id="vLc-Dp-ziI"/>
+                        <outletCollection property="cardButtonCollection" destination="BYj-qL-qyV" id="hyO-CM-s93"/>
+                        <outletCollection property="cardButtonCollection" destination="Fdv-4j-sCE" id="Iie-dA-crL"/>
+                        <outletCollection property="cardButtonCollection" destination="M3t-cO-xOx" id="XeT-jS-yvT"/>
+                        <outletCollection property="cardButtonCollection" destination="iDF-LP-WJu" id="9NE-fM-ip7"/>
+                        <outletCollection property="cardButtonCollection" destination="P44-2J-Pkz" id="39F-qo-cbb"/>
+                        <outletCollection property="cardButtonCollection" destination="L7p-0E-VGF" id="X0x-j8-2se"/>
+                        <outletCollection property="cardButtonCollection" destination="IaV-u6-c2u" id="SC2-RD-DPJ"/>
+                        <outletCollection property="cardButtonCollection" destination="aBK-6v-q9e" id="xi1-vd-2CD"/>
+                        <outletCollection property="cardButtonCollection" destination="rmZ-po-Fad" id="8PI-ki-GYx"/>
+                        <outletCollection property="cardButtonCollection" destination="A0o-Dl-7B8" id="LqX-Z6-M9O"/>
+                        <outletCollection property="cardButtonCollection" destination="FwW-ys-IYt" id="e22-xU-NvI"/>
+                        <outletCollection property="cardButtonCollection" destination="kvR-5D-Ihd" id="jN5-0i-IdB"/>
+                        <outletCollection property="cardButtonCollection" destination="5nk-j5-DbN" id="wGc-RH-lkh"/>
+                        <outletCollection property="cardButtonCollection" destination="9Iq-kp-q8J" id="wqH-qF-yZ7"/>
+                        <outletCollection property="cardButtonCollection" destination="xnv-6D-p8s" id="IKY-3f-yIR"/>
+                        <outletCollection property="cardButtonCollection" destination="tLs-bo-xka" id="3aM-KY-cjP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZj-3E-8WD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -736,6 +732,16 @@ simple set card game ...</string>
                                     <action selector="cardTouchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EbF-G2-q3g"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikX-Rb-ie7">
+                                <rect key="frame" x="115" y="483" width="89" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Redeal cards">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetCardGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUD-J7-h6x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.18242064322669591" green="0.57894490245983909" blue="0.92854324494949492" alpha="1" colorSpace="calibratedRGB"/>
@@ -795,11 +801,12 @@ simple set card game ...</string>
                     <connections>
                         <segue destination="3I0-C0-rGm" kind="relationship" relationship="viewControllers" id="yFM-KA-Zmu"/>
                         <segue destination="H23-sd-2SV" kind="relationship" relationship="viewControllers" id="Nz7-Nx-JAI"/>
+                        <segue destination="eFg-PF-Ur7" kind="relationship" relationship="viewControllers" id="5BF-fm-pK9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nh-NB-XBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="-156"/>
+            <point key="canvasLocation" x="1299" y="-158"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="bWP-UG-gEp">
@@ -926,6 +933,46 @@ simple matching game ...</string>
             </objects>
             <point key="canvasLocation" x="2261" y="-483"/>
         </scene>
+        <!--History View Controller-->
+        <scene sceneID="l1X-28-lnb">
+            <objects>
+                <viewController id="eFg-PF-Ur7" customClass="HistoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kb2-OA-lyu"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Xi-2J-pgk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o4j-Ne-fdY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5c-2l-vWQ">
+                                <rect key="frame" x="20" y="48" width="287" height="456"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8q-P4-jJB">
+                                <rect key="frame" x="132" y="19" width="55" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="UYz-sc-or4"/>
+                    <navigationItem key="navigationItem" id="nm1-4p-lJ1"/>
+                    <connections>
+                        <outlet property="historyLabel" destination="a5c-2l-vWQ" id="vYv-8w-D2n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEu-TN-YNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605" y="562"/>
+        </scene>
         <!--Loby-->
         <scene sceneID="HAL-cB-250">
             <objects>
@@ -949,11 +996,10 @@ simple matching game ...</string>
     </scenes>
     <resources>
         <image name="arrow" width="100" height="100"/>
+        <image name="cardMain" width="77" height="106"/>
         <image name="cardMatchTwo" width="77" height="106"/>
-        <image name="cardMatchTwoBlue" width="77" height="105"/>
         <image name="cardTop" width="77" height="105"/>
         <image name="loby" width="25" height="24"/>
-        <image name="lobycardback" width="77" height="105"/>
         <image name="lobylogo" width="177" height="178"/>
         <image name="logo" width="157" height="158"/>
         <image name="roby" width="23" height="23"/>

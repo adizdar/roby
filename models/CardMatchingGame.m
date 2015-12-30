@@ -17,7 +17,7 @@
 
 @implementation CardMatchingGame
 
-// var
+#pragma mark - VAR
 
     static const int MATCH_POINTS = 4;
     static const int MISMATCH_POINTS = 2;
@@ -34,6 +34,7 @@
     if (self) {
         Card *card;
         self.cardMatchNumber = matchNumber;
+        self.chosenCardsCounter = 0;
         
         for (int i = 0; i < count; i++) {
             card = [deck drawRandomCard];
@@ -54,7 +55,7 @@
     return nil;
 }
 
-// geters & seters
+#pragma mark - Getter & Setters
 
 - (NSMutableArray *) cards
 {
@@ -68,7 +69,7 @@
     return _cardMatchNumber;
 }
 
-// methods
+#pragma mark - Class methods
 
 - (Card *)cardAtIndex:(NSUInteger)index
 {
@@ -80,15 +81,17 @@
     Card *card = [self cardAtIndex:index];
     NSMutableArray *matchCards = [[NSMutableArray alloc] init];
     NSUInteger cardMatchNumber = self.cardMatchNumber - 1; // substratct chosen card
+    self.chosenCardsCounter = 1;
 
     if(card.isMatched || !(card.chosen = !card.isChosen)) return;
 
     // filter out matched cards
     for (Card *c in self.cards) {
         if(matchCards.count == cardMatchNumber) break;
+        
         if(c.isChosen && !c.isMatched && c != card) {
-            c.chosen = YES;
             [matchCards addObject:c];
+            self.chosenCardsCounter++;
         }
     }
     
@@ -112,6 +115,7 @@
     self.score -= COST_TO_CHOOSE;
 
 }
+
 
 
 //NSArray * filtered = [matchCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"aProperty = %@", @"someValue"]];

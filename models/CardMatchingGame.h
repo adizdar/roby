@@ -13,6 +13,7 @@
 
 @property(nonatomic, readonly) NSUInteger score;
 @property(nonatomic) NSUInteger cardMatchNumber;
+@property(nonatomic, getter=getChosenCardsCounter) NSUInteger chosenCardsCounter;
 
 - (instancetype)initWithCardCount: (NSInteger) count
                         usingDeck:(Deck *) deck
@@ -20,5 +21,6 @@
 
 - (void)chooseCardAtIndex: (NSUInteger) index;
 - (Card *)cardAtIndex: (NSUInteger) index;
+
 
 @end
