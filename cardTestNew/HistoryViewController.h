@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HistoryController.h"
 
-@interface HistoryViewController : UIViewController
-@property (nonatomic, strong) NSString *history;
+@interface HistoryViewController : UIViewController<HistoryController>
+
+@property (strong, nonatomic) id historyData;
+
 @end

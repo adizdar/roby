@@ -70,7 +70,16 @@ alpha:1.0]
     UIRectFill(self.bounds);
     
     [self drawImageOnCard];
-    [self drawCorners];
+    self.faceUp = YES;
+    
+    // don't draw text if card is face down
+    if(self.faceUp) [self drawCorners];
+    
+    [UIView animateWithDuration:1.5
+                          delay:2.0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{ self.alpha = 0.0; }
+                     completion:^(BOOL fin){ if(fin) self.alpha = 1.0; }];
     
 }
 
@@ -125,12 +134,11 @@ alpha:1.0]
                                    (self.bounds.size.height) * (1 - DEFAULT_CARD_SCALE_FACTOR));
 
     [faceImage drawInRect: imageRect];
-    
 }
 
 #pragma mark OVERRIDE
 
-- (NSString *)getCornerTextFormat
+- (NSString *)getCornerText
 {
     return @"";
 }
@@ -166,7 +174,7 @@ alpha:1.0]
     UIFont* cornerFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     cornerFont = [cornerFont fontWithSize:cornerFont.pointSize * [self cornerScaleFactor]];
     
-    NSAttributedString* cornerText = [[NSAttributedString alloc] initWithString:[self getCornerTextFormat] attributes: @{ NSFontAttributeName: cornerFont, NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: UIColorFromRGB(0x329EFE) }];
+    NSAttributedString* cornerText = [[NSAttributedString alloc] initWithString:[self getCornerText] attributes: @{ NSFontAttributeName: cornerFont, NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: UIColorFromRGB(0x329EFE) }];
     
     // text in right corner
     CGRect textBounds;

@@ -7,15 +7,21 @@
 //
 
 #import "PlayingCardView.h"
+#import "PlayingCard.h"
+
+@interface PlayingCardView ()
+@end
 
 @implementation PlayingCardView
 
+#pragma mark PRIVATE
 
 #pragma mark OVERRIDE_PARENT_METHODS
 
-- (NSString *)getCornerTextFormat
+- (NSString *)getCornerText
 {
-    return @"4";
+    return @"A";
+    //return [NSString stringWithFormat:@"%@\n%@", @(self.rank), self.suit];
 }
 
 - (NSString *)getFaceImageFormat
@@ -25,7 +31,8 @@
 
 - (NSString *)getFaceImageName
 {
-    return @"4";
+    return @"1";
+    //return self.faceUp ? [NSString stringWithFormat:@"%@", @(self.rank)] : @"cardTop";
 }
 
 /*

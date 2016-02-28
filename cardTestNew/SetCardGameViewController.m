@@ -10,7 +10,8 @@
 #import "SetCardGameViewController.h"
 #import "CardGameType.h"
 #import "SetCardDeck.h"
-#import "SetCard.h"
+
+#pragma mark - Macros
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -30,22 +31,62 @@ typedef NS_ENUM(NSUInteger, ShapeTypeEnum) {
 ////////////////////////////////////////
 
 @interface SetCardGameViewController ()
+@property(strong, nonatomic) NSArray* supportedShapes;
 @end
 
 @implementation SetCardGameViewController
 
-/**
- * Override parent methods
- */
+#pragma mark - Override
 
 - (SetCardDeck*) createDeck
 {
     return [[SetCardDeck alloc] init];
 }
 
-/**
- * Methods
- */
+#pragma mark - Lifecycle
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColorFromRGB(0x329EFE)};
+    
+    [self updateUi];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Custom Accessors (GET & SET)
+- (NSArray*) supportedShapes
+{
+    if (!_supportedShapes) {
+        _supportedShapes = @[@"▲", @"●", @"■"];
+    }
+    
+    return _supportedShapes;
+}
+
+#pragma mark - IBActions
+#pragma mark - Public
+#pragma mark - Private
+
+// @TODO out of the bounds handling
+- (NSString*) getShapeForCard: (id)shape
+{
+    if ([shape isKindOfClass:[NSNumber class]]) {
+        return [self.supportedShapes objectAtIndex: [(NSNumber *) shape integerValue]];
+    }
+    
+    return [self.supportedShapes objectAtIndex: [[shape description] integerValue]];
+}
 
 - (void) updateUi
 {
@@ -75,7 +116,7 @@ typedef NS_ENUM(NSUInteger, ShapeTypeEnum) {
 
 - (NSAttributedString *) attachAtributsToShape: (SetCard *)card
 {
-    return [[NSAttributedString alloc] initWithString: [self shapeForCard: [card.shapeNumber intValue] shape: card.shape] attributes: [self createAtributesfromCardProperties:card]];
+    return [[NSAttributedString alloc] initWithString: [self shapeForCard: [card.shapeNumber intValue] shape:[self getShapeForCard: card.shape]] attributes: [self createAtributesfromCardProperties:card]];
 }
 
 - (NSDictionary* ) createAtributesfromCardProperties: (SetCard *) card
@@ -117,7 +158,7 @@ typedef NS_ENUM(NSUInteger, ShapeTypeEnum) {
 // @Override
 - (NSString *)titleForCard:(SetCard *)card
 {
-    return [self shapeForCard: [card.shapeNumber intValue] shape: card.shape];
+    return [self shapeForCard: [card.shapeNumber intValue] shape: [self getShapeForCard: card.shape]];
 }
 
 - (void) updateMoveHistory: (SetCard *) card
@@ -130,31 +171,11 @@ typedef NS_ENUM(NSUInteger, ShapeTypeEnum) {
     [self.playedMovesHistory appendAttributedString: (NSAttributedString *)title];
 }
 
-/**
- * View specific events
- */
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColorFromRGB(0x329EFE)};
-    
-    [self updateUi];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
+#pragma mark - NSCopying
+#pragma mark - NSObject
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

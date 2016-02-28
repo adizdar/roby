@@ -9,7 +9,7 @@
 ///////////////////////////////////////
 #import "PlayingCardViewController.h"
 #import "PlayingCardDeck.h"
-#import "HistoryViewController.h"
+#import "PlayingCardView.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -23,7 +23,6 @@ alpha:1.0]
 @end
 
 @implementation PlayingCardViewController
-
 
 /**
   * Override parent methods
@@ -52,11 +51,11 @@ alpha:1.0]
         cardButtonIndex = [self.cardButtonCollection indexOfObject:cardButton];
         card = [self.game cardAtIndex:cardButtonIndex];
 
-        [cardButton setTitle:[self titleForCard:card]
-                    forState:UIControlStateNormal];
+        [cardButton setTitle: [self titleForCard:card]
+                    forState: UIControlStateNormal];
         
-        [cardButton setBackgroundImage:[self imageForCard:card]
-                              forState:UIControlStateNormal];
+        [cardButton setBackgroundImage: [self imageForCard:card]
+                              forState: UIControlStateNormal];
         
         cardButton.enabled = !card.isMatched;
     }
@@ -69,16 +68,26 @@ alpha:1.0]
   */
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColorFromRGB(0x329EFE)};
-    
     [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColorFromRGB(0x329EFE)};
 }
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view.
-//}
-//
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+    if ([[notification name] isEqualToString:@"TestNotification"])
+        NSLog (@"Successfully received the test notification!");
+}
+
 //- (void)viewWillDisappear:(BOOL)animated
 //{
 //    [super viewWillDisappear:animated];

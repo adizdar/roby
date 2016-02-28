@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AbstractHomeController.h"
+#import "PlayingCardView.h"
 
 @interface HomeViewController : AbstractHomeController
-
 @end

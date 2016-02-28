@@ -7,7 +7,6 @@
 //
 
 #import "SetCardDeck.h"
-#import "SetCard.h"
 
 @implementation SetCardDeck
 
@@ -16,6 +15,7 @@
     self = [super init];
     
     if (self) {
+        SetCard *card;
         
         // we use ID because the deck shouldnt care about the type, the controller should handle the type case
         // "duck typing", if it quacks like a duck it is a duck
@@ -23,7 +23,7 @@
             for (id color in [SetCard validGameFeatures]) {
                 for (id type in [SetCard validGameFeatures]) {
                     for (id number in [SetCard validNumber]) {
-                        SetCard *card = [[SetCard alloc] init];
+                        card = [[SetCard alloc] init];
                         
                         card.shape = shape;
                         card.color = color;

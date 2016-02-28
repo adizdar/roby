@@ -22,9 +22,8 @@
 - (CGPoint) getCornerTextPosition; // default corrnerOffset
 
 // @override
-- (NSString *)getCornerTextFormat;
+- (NSString *)getCornerText;
 - (NSString *)getFaceImageFormat;
-- (NSString *)getFaceImageName;
-
+- (NSString *)getFaceImageName; // NOTE needs to include faceDown image
 
 @end

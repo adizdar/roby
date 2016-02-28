@@ -13,7 +13,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) id historyData;
+@property (strong, nonatomic) id historyData; // NOT GOOD @TODO REFACTOR
+//http://stackoverflow.com/questions/569940/whats-the-best-way-to-communicate-between-view-controllers
 
 @end
 

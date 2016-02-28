@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import "Deck.h"
 #import "CardMatchingGame.h"
+#import "HistoryController.h"
 /////////////////////////
 
 @interface AbstractCardGameViewContoller : UIViewController
@@ -22,6 +23,7 @@
     @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
     @property (strong, nonatomic) Deck *pcDeck;
     @property (nonatomic, strong) CardMatchingGame *game;
+//    @property (nonatomic, strong) id <HistoryController> historyController; // genric controller option for history implementation, the protocol definition needs to be implemented in the historyViewController
 
     // -- Public methods
     - (void)updateUi;

@@ -39,6 +39,7 @@
     return _game;
 }
 
+
 - (NSUInteger) gameType 
 {
     return !_gameType ? 2 :_gameType;
@@ -49,15 +50,6 @@
     return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtonCollection count]
                                              usingDeck: [self createDeck] matchNumber: self.gameType];
 }
-
-//- (NSString *) playedMovesHistory
-//{
-//    if (!_playedMovesHistory) {
-//        _playedMovesHistory = @"";
-//    }
-//    
-//    return _playedMovesHistory;
-//}
 
 /**
   * Methods
@@ -144,12 +136,25 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    UIAppDelegate.historyData = self.playedMovesHistory;
+    //UIAppDelegate.historyData = self.playedMovesHistory;
     
+//    if (self.historyController && [self.historyController respondsToSelector: @selector(setHistoryData:)]) {
+//           [self.historyController setHistoryData: self.playedMovesHistory];
+//    }
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"HistoryDataNotification"
+     object:self.playedMovesHistory];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 
 //Card *randomCard = [self.pcDeck drawRandomCard];

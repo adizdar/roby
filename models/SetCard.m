@@ -63,13 +63,12 @@
 
 - (NSString *) contents
 {
-    
     return @"";
 }
 
 + (NSArray*) validShapes
 {
-    return @[@"▲", @"●", @"■"];
+    return @[@0, @1, @2];
 }
 
 + (NSArray *) validGameFeatures
