@@ -10,5 +10,7 @@
 #import "AbstractCardView.h"
 
 @interface PlayingCardView : AbstractCardView
-
+    @property (nonatomic, strong) NSString* contents;
+    @property(strong, nonatomic) NSString* suit;
+    @property(nonatomic) NSUInteger rank;
 @end

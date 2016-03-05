@@ -33,6 +33,8 @@
 		604C08A91BBEACF1000B1DAD /* LobyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604C08A81BBEACF1000B1DAD /* LobyHomeViewController.m */; };
 		6053F67C1BCE7B62008D6353 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6053F67B1BCE7B62008D6353 /* HistoryViewController.m */; };
 		605571C51B110E3900B5AB10 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 605571C41B110E3900B5AB10 /* CardMatchingGame.m */; };
+		605920CF1C84F46200D0E23F /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605920CE1C84F46200D0E23F /* SetCardView.m */; };
+		605920D21C859AB300D0E23F /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 605920D11C859AB300D0E23F /* Utils.m */; };
 		60BCA6101BC1D1D100539BD2 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BCA60F1BC1D1D100539BD2 /* SetCard.m */; };
 		60BDAF591BBDEF4400D98C73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60BDAF581BBDEF4400D98C73 /* Images.xcassets */; };
 		60BDAF5C1BBE86C400D98C73 /* AbstractHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BDAF5B1BBE86C400D98C73 /* AbstractHomeController.m */; };
@@ -89,6 +91,10 @@
 		6053F67B1BCE7B62008D6353 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		605571C31B110E3900B5AB10 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = models/CardMatchingGame.h; sourceTree = "<group>"; };
 		605571C41B110E3900B5AB10 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = models/CardMatchingGame.m; sourceTree = "<group>"; };
+		605920CD1C84F46200D0E23F /* SetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
+		605920CE1C84F46200D0E23F /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
+		605920D01C859AB300D0E23F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		605920D11C859AB300D0E23F /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		60BCA60E1BC1D1D100539BD2 /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCard.h; path = models/SetCard.h; sourceTree = "<group>"; };
 		60BCA60F1BC1D1D100539BD2 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCard.m; path = models/SetCard.m; sourceTree = "<group>"; };
 		60BDAF581BBDEF4400D98C73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -272,6 +278,8 @@
 			children = (
 				6053F67A1BCE7B62008D6353 /* HistoryViewController.h */,
 				6053F67B1BCE7B62008D6353 /* HistoryViewController.m */,
+				605920D01C859AB300D0E23F /* Utils.h */,
+				605920D11C859AB300D0E23F /* Utils.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -314,6 +322,8 @@
 				60C3594E1C344064001DB7C0 /* AbstractCardView.m */,
 				60C359501C3749BE001DB7C0 /* PlayingCardView.h */,
 				60C359511C3749BE001DB7C0 /* PlayingCardView.m */,
+				605920CD1C84F46200D0E23F /* SetCardView.h */,
+				605920CE1C84F46200D0E23F /* SetCardView.m */,
 			);
 			name = CardView;
 			sourceTree = "<group>";
@@ -421,6 +431,7 @@
 				6037683E1BDF67D30020BEB4 /* SetCardDeck.m in Sources */,
 				605571C51B110E3900B5AB10 /* CardMatchingGame.m in Sources */,
 				601931E11B03E46600180D1C /* PlayingCard.h in Sources */,
+				605920D21C859AB300D0E23F /* Utils.m in Sources */,
 				601931E21B03E46600180D1C /* PlayingCard.m in Sources */,
 				601FD4B61B39A13A005701A2 /* PlayingCardViewController.m in Sources */,
 				601931E31B03E46600180D1C /* PlayingCardDeck.h in Sources */,
@@ -437,6 +448,7 @@
 				601EC4671AFF6CFC009508AE /* AppDelegate.m in Sources */,
 				6053F67C1BCE7B62008D6353 /* HistoryViewController.m in Sources */,
 				60BCA6101BC1D1D100539BD2 /* SetCard.m in Sources */,
+				605920CF1C84F46200D0E23F /* SetCardView.m in Sources */,
 				601EC4641AFF6CFC009508AE /* main.m in Sources */,
 				601FD4B91B3F561E005701A2 /* SetCardGameViewController.m in Sources */,
 				601931DB1B03DE5000180D1C /* card.m in Sources */,

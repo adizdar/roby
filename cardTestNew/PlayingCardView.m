@@ -14,14 +14,15 @@
 
 @implementation PlayingCardView
 
-#pragma mark PRIVATE
+#pragma mark - Override
 
-#pragma mark OVERRIDE_PARENT_METHODS
+#pragma mark NEEDS_TO_OVERRIDE_TITLE_FOR_CARD_&_IMAGE_FOR_CARD
 
 - (NSString *)getCornerText
 {
-    return @"A";
-    //return [NSString stringWithFormat:@"%@\n%@", @(self.rank), self.suit];
+//    return [NSString stringWithFormat:@"%@\n%@", @(self.rank), self.suit];
+    
+    return [NSString stringWithFormat: @"%@", self.contents];
 }
 
 - (NSString *)getFaceImageFormat
@@ -31,8 +32,39 @@
 
 - (NSString *)getFaceImageName
 {
-    return @"1";
-    //return self.faceUp ? [NSString stringWithFormat:@"%@", @(self.rank)] : @"cardTop";
+    return self.faceUp ? [NSString stringWithFormat:@"%@", @(self.rank)] : @"cardTop";
+}
+
+- (void)drawOnFaceUpCard
+{
+    [self drawImageOnCard];
+     [self drawCorners];
+}
+
+- (void)drawOnFaceDownCard
+{
+    [self drawImageOnCard];
+}
+
+#pragma mark - Custom Accessors
+
+- (void)setSuit:(NSString *)suit
+{
+    _suit = suit;
+    [self setNeedsDisplay];
+}
+
+- (void)setRank:(NSUInteger)rank
+{
+    _rank = rank;
+    [self setNeedsDisplay];
+}
+
+#pragma mark PRIVATE
+
+- (void)awakeFromNib
+{
+    self.faceUp = YES;
 }
 
 /*

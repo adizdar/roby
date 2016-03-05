@@ -10,6 +10,7 @@
 #import "SetCardGameViewController.h"
 #import "CardGameType.h"
 #import "SetCardDeck.h"
+#import "SetCardView.h"
 
 #pragma mark - Macros
 
@@ -32,6 +33,8 @@ typedef NS_ENUM(NSUInteger, ShapeTypeEnum) {
 
 @interface SetCardGameViewController ()
 @property(strong, nonatomic) NSArray* supportedShapes;
+@property(strong, nonatomic) IBOutlet SetCardView *setView;
+
 @end
 
 @implementation SetCardGameViewController
@@ -56,6 +59,11 @@ typedef NS_ENUM(NSUInteger, ShapeTypeEnum) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    SetCard *test = (SetCard *)[self.game cardAtIndex: 1];
+    [self.setView setColor: [UIColor redColor]];
+    [self.setView setShape: test.shape];
+    [self.setView setShapeNumber: test.shapeNumber];
+    [self.setView setShapeType: @0];
 }
 
 - (void)didReceiveMemoryWarning {

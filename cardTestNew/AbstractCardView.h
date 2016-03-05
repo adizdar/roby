@@ -10,20 +10,27 @@
 
 @interface AbstractCardView : UIView
 
-@property(strong, nonatomic) NSString* suit;
-@property(nonatomic) NSUInteger rank;
 @property(nonatomic) BOOL faceUp;
 
 - (id)initWithFrame:(CGRect)frame;
 
+// @units
+- (CGFloat)cornerScaleFactor;
+- (CGFloat)cornerRadius;
+- (CGFloat)cornerOffset;
+
 // @virtual methods
-- (UIColor *)getCardBacgroundColor; // default white
 - (UIColor *)getStrokeColor; // default black
+- (UIColor *)getCardBacgroundColor; // default white
 - (CGPoint) getCornerTextPosition; // default corrnerOffset
+- (void) drawImageOnCard; // it use by default getFaceImageName method
+- (void)drawImageOnCard: (NSString *)imageName;
+- (void) drawCorners; // default text on left and lower right corner
 
 // @override
 - (NSString *)getCornerText;
-- (NSString *)getFaceImageFormat;
 - (NSString *)getFaceImageName; // NOTE needs to include faceDown image
-
+- (NSString *)getFaceImageFormat;
+- (void) drawOnFaceUpCard;
+- (void) drawOnFaceDownCard;
 @end

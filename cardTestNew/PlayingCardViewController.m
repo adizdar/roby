@@ -10,6 +10,7 @@
 #import "PlayingCardViewController.h"
 #import "PlayingCardDeck.h"
 #import "PlayingCardView.h"
+#import "Utils.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -19,6 +20,7 @@ alpha:1.0]
 ///////////////////////////////////////
 
 @interface PlayingCardViewController ()
+@property (weak, nonatomic) IBOutlet PlayingCardView *testView;
 
 @end
 
@@ -45,12 +47,15 @@ alpha:1.0]
 - (void)updateUi
 {
     NSUInteger cardButtonIndex;
-    Card *card;
+    PlayingCard *card;
+    PlayingCardView *cardView = [[PlayingCardView alloc] init];
+    
+    [cardView setContents: @"A"];
     
     for (UIButton *cardButton in self.cardButtonCollection) {
         cardButtonIndex = [self.cardButtonCollection indexOfObject:cardButton];
-        card = [self.game cardAtIndex:cardButtonIndex];
-
+        card = (PlayingCard *) [self.game cardAtIndex:cardButtonIndex];
+    
         [cardButton setTitle: [self titleForCard:card]
                     forState: UIControlStateNormal];
         
@@ -70,12 +75,16 @@ alpha:1.0]
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColorFromRGB(0x329EFE)};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [Utils UIColorFromRGB: 0x329EFE]};
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    PlayingCard *bla = (PlayingCard *) [self.game cardAtIndex:2];
+
+    [self.testView setContents: bla.contents];
+    [self.testView setRank: bla.rank];
 }
 
 - (void) receiveTestNotification:(NSNotification *) notification

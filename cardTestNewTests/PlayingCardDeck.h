@@ -7,6 +7,7 @@
 //
 
 #import "Deck.h"
+#import "PlayingCard.h"
 
 #ifndef cardTestNew_PlayingCardDeck_h
 

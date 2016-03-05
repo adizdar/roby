@@ -42,7 +42,7 @@
         
     }
     
-    // @todo make this logic below beter
+    // @todo make this logic below better
     
     // check if we have a set
     for (NSString* key in counter) {

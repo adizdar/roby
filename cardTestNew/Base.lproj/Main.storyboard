@@ -381,6 +381,21 @@ simple set matching card game ...</string>
                                     <action selector="resetCardGame:" destination="mwb-TN-JRI" eventType="touchUpInside" id="Njw-Tn-nls"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-fl-8IA" customClass="SetCardView">
+                                <rect key="frame" x="15" y="88" width="148" height="211"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CDo-zo-kYO" customClass="SetCardView">
+                                <rect key="frame" x="255" y="88" width="49" height="69"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPq-je-H8F" customClass="SetCardView">
+                                <rect key="frame" x="100" y="313" width="120" height="171"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -389,6 +404,7 @@ simple set matching card game ...</string>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="setView" destination="CDo-zo-kYO" id="zjS-nC-9JS"/>
                         <outletCollection property="cardButtonCollection" destination="HDk-71-WG4" id="dDf-Oq-xN8"/>
                         <outletCollection property="cardButtonCollection" destination="hFj-gb-QBx" id="54a-tm-ebh"/>
                         <outletCollection property="cardButtonCollection" destination="BNr-7l-kl0" id="Dx0-9p-S6m"/>
@@ -742,6 +758,18 @@ simple set matching card game ...</string>
                                     <action selector="resetCardGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUD-J7-h6x"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfc-Wq-cAJ" customClass="PlayingCardView">
+                                <rect key="frame" x="123" y="148" width="66" height="95"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AQ-ur-xMw" customClass="PlayingCardView">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="95"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.18242064322669591" green="0.57894490245983909" blue="0.92854324494949492" alpha="1" colorSpace="calibratedRGB"/>
@@ -755,6 +783,7 @@ simple set matching card game ...</string>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="testView" destination="4AQ-ur-xMw" id="R0k-0I-BMC"/>
                         <outletCollection property="cardButtonCollection" destination="oA8-XW-pf0" id="il1-eX-ZCp"/>
                         <outletCollection property="cardButtonCollection" destination="eHD-d7-adG" id="6GW-gI-IJj"/>
                         <outletCollection property="cardButtonCollection" destination="KhQ-4c-LTh" id="kMB-KQ-epR"/>
@@ -882,11 +911,6 @@ simple matching game ...</string>
                                     <action selector="changeGameType:" destination="2sO-Zc-qNy" eventType="touchUpInside" id="HnB-d8-VgN"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-8v-HbU" customClass="PlayingCardView">
-                                <rect key="frame" x="11" y="20" width="60" height="88"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.61960784313725492" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -914,7 +938,7 @@ simple matching game ...</string>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2793" y="-483"/>
+            <point key="canvasLocation" x="2793" y="-477"/>
         </scene>
         <!--Roby-->
         <scene sceneID="9wB-s5-bYp">

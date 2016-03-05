@@ -34,7 +34,8 @@ alpha:1.0]
 
 #pragma mark INIT
 
-// This is because initWithFrame: is NOT called for a UIView coming out of a storyboard! But awakeFromNib is.
+// because initWithFrame: is NOT called for a UIView coming out of a storyboard!
+// But awakeFromNib is.
 - (void)awakeFromNib
 {
     [self setup];
@@ -57,45 +58,53 @@ alpha:1.0]
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     
-    UIBezierPath *card = [UIBezierPath bezierPathWithRoundedRect: self.bounds cornerRadius: [self cornerRadius]];
+    UIBezierPath *card = [UIBezierPath bezierPathWithRoundedRect: self.bounds
+                                                    cornerRadius: [self cornerRadius]];
+    CAShapeLayer *cornerMaskLayer = [CAShapeLayer layer];
+    CAShapeLayer *borderStrokeLayer = [CAShapeLayer layer];
     
     [card addClip]; // so we don't draw outside of the rectangle
-    
-    // set properties
+
+    // set card properties
     [[self getCardBacgroundColor] setFill];
     [[self getStrokeColor] setStroke];
+    
+    // mask the container view’s layer to round the corners
+    // without it the border won't go around the card
+    [cornerMaskLayer setPath:card.CGPath];
+    self.layer.mask = cornerMaskLayer;
+    
+    // make a transparent, stroked layer which will dispay the stroke/border
+    borderStrokeLayer.path = card.CGPath;
+    borderStrokeLayer.fillColor = [UIColor clearColor].CGColor;
+    borderStrokeLayer.strokeColor = UIColorFromRGB(0x95A5A6).CGColor;
+    borderStrokeLayer.lineWidth = 0.5f; // the stroke splits the width evenly
+                                        // inside and outside,
+                                        // but the outside part will be clipped by
+                                        // the containerView’s mask.
+    
+    [self.layer addSublayer: borderStrokeLayer];
     
     // apply properties to card
     [card stroke];
     UIRectFill(self.bounds);
     
-    [self drawImageOnCard];
-    self.faceUp = YES;
+    // don't draw on card if card is face down
+    if(self.faceUp) {
+        [self drawOnFaceUpCard];
+    } else {
+        [self drawOnFaceDownCard];
+    }
     
-    // don't draw text if card is face down
-    if(self.faceUp) [self drawCorners];
-    
-    [UIView animateWithDuration:1.5
-                          delay:2.0
-                        options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{ self.alpha = 0.0; }
-                     completion:^(BOOL fin){ if(fin) self.alpha = 1.0; }];
+//    [UIView animateWithDuration:1.5
+//                          delay:2.0
+//                        options:UIViewAnimationOptionBeginFromCurrentState
+//                     animations:^{ self.alpha = 0.0; }
+//                     completion:^(BOOL fin){ if(fin) self.alpha = 1.0; }];
     
 }
 
 #pragma mark GET & SET
-
-- (void)setSuit:(NSString *)suit
-{
-    _suit = suit;
-    [self setNeedsDisplay];
-}
-
-- (void)setRank:(NSUInteger)rank
-{
-    _rank = rank;
-    [self setNeedsDisplay];
-}
 
 - (void)setFaceUp:(BOOL)faceUp
 {
@@ -115,14 +124,19 @@ alpha:1.0]
     return [UIColor blackColor];
 }
 
-- (CGPoint) getCornerTextPosition
+- (CGPoint)getCornerTextPosition
 {
     return CGPointMake([self cornerOffset], [self cornerOffset]);
 }
 
 - (void)drawImageOnCard
 {
-    UIImage* faceImage = [UIImage imageNamed:[NSString stringWithFormat: [self getFaceImageFormat], [self getFaceImageName]]];
+    [self drawImageOnCard: [self getFaceImageName]];
+}
+
+- (void)drawImageOnCard: (NSString *)imageName
+{
+    UIImage* faceImage = [UIImage imageNamed:[NSString stringWithFormat: [self getFaceImageFormat], imageName]];
     
     // @todo create ERROR_HANDLING macro
     if (!faceImage) {
@@ -132,38 +146,9 @@ alpha:1.0]
     CGRect imageRect = CGRectInset(self.bounds,
                                    (self.bounds.size.width) * (1 - DEFAULT_CARD_SCALE_FACTOR),
                                    (self.bounds.size.height) * (1 - DEFAULT_CARD_SCALE_FACTOR));
-
+    
     [faceImage drawInRect: imageRect];
-}
 
-#pragma mark OVERRIDE
-
-- (NSString *)getCornerText
-{
-    return @"";
-}
-
-- (NSString *)getFaceImageFormat
-{
-    return @"%@";
-}
-
-- (NSString *)getFaceImageName
-{
-    return @"";
-}
-
-#pragma mark PRIVATE
-
-- (void)setup
-{
-    self.backgroundColor = nil;
-    
-    // Be sure to set @property BOOL opaque to NO in a view which is partially transparent. If you don’t, results are unpredictable (this is a performance optimization property, by the way).
-    self.opaque = NO;
-    
-    // This content mode calls drawRect: to redraw everything when the bounds changes
-    self.contentMode = UIViewContentModeRedraw;
 }
 
 - (void)drawCorners
@@ -189,7 +174,53 @@ alpha:1.0]
     CGContextRotateCTM(UIGraphicsGetCurrentContext(), M_PI);
     
     [cornerText drawInRect: textBounds];
+    
+}
 
+#pragma mark OVERRIDE
+
+- (NSString *)getCornerText
+{
+    return @"";
+}
+
+- (NSString *)getFaceImageFormat
+{
+    return @"%@";
+}
+
+- (NSString *)getFaceImageName
+{
+    return @"";
+}
+
+- (void)drawOnFaceUpCard
+{
+    // Override with card setup
+    // @Example:
+    // [self drawImageOnCard];
+    // [self drawCorners];
+}
+
+- (void)drawOnFaceDownCard
+{
+    // Override with card setup
+    // @Example:
+    // [self drawImageOnCard];
+    // [self drawCorners];
+}
+
+#pragma mark PRIVATE
+
+- (void)setup
+{
+    self.backgroundColor = nil;
+    
+    // Be sure to set @property BOOL opaque to NO in a view which is partially transparent. If you don’t, results are unpredictable (this is a performance optimization property, by the way).
+    self.opaque = NO;
+    
+    // This content mode calls drawRect: to redraw everything when the bounds changes
+    self.contentMode = UIViewContentModeRedraw;
 }
 
 @end

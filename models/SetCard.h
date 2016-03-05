@@ -9,7 +9,7 @@
 #import "card.h"
 
 @interface SetCard : Card
-@property(nonatomic, strong) NSString* shape;
+@property(nonatomic, strong) NSNumber* shape;
 @property(nonatomic, strong) NSNumber* shapeType; // outline, fill, shade ...
 @property(nonatomic, strong) NSNumber* color;
 @property(nonatomic, strong) NSNumber* shapeNumber; // need pointer becaus of SET
